@@ -22,17 +22,32 @@
 <link rel="icon" href="images/fevicon.png" type="image/gif" />
 <!-- Scrollbar Custom CSS -->
 <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-<script>
-  function validate(){  
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var password=document.myform.password.value;
+var email=document.myform.email.value;
 var num=document.myform.num.value;  
-if (isNaN(num)){  
-  document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+var atposition=email.indexOf("@");  
+var dotposition=email.lastIndexOf(".");  
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
   return false;  
-}else{  
-  return true;  
+}else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
   }  
+  else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+   }
+  else if(if (isNaN(num)){  
+  document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+  return false; 
+}
 }  
-</script>
+</script>  
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -116,13 +131,14 @@ if (isNaN(num)){
     </div>
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <form form name="myform" onsubmit="return validate()">
-          <input class="form-control" placeholder="Name" type="Name">
-          <input class="form-control" placeholder="Phone" type="Phone">
-          <input class="form-control" placeholder="Email" type="Email">
+        
+          <form name="myform" method="post" action="abc.jsp" onsubmit="return validateform()" >  
+           Name: <input type="text" name="name"><br/>  
+           Password: <input type="password" name="password"><br/> 
+           Email:<input type="email" name="email"><br/>
+           Number: <input type="text" name="num"><span id="numloc"></span><br/>  
+           <input type="submit" value="submit">   
           <textarea class="textarea" placeholder="Message" >Message</textarea>
-          number:<<input type="text" name="num"><span id="numloc"></span><br/>  
-          <input type="submit" value="submit">  
         </form>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -131,7 +147,7 @@ if (isNaN(num)){
           <div class="Register">
           	<h3>Get started today widh digital money bitcon</h3>
           	<p>consectetur adipiscing elit, sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Ut enim </p>
+               incididunt ut labore et dolore magna aliqua. Ut enim </p>
           	<a href="#">Register now</a>
           </div>
         </div>
