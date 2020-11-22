@@ -25,8 +25,11 @@
 <script>  
 function validateform(){  
 var name=document.myform.name.value;  
-var password=document.myform.password.value;  
-  
+var password=document.myform.password.value; 
+var email=document.myform.email.value;  
+var atposition=email.indexOf("@");  
+var dotposition=email.lastIndexOf(".");  
+var num=document.myform.num.value;   
 if (name==null || name==""){  
   alert("Name can't be blank");  
   return false;  
@@ -34,16 +37,15 @@ if (name==null || name==""){
   alert("Password must be at least 6 characters long.");  
   return false;  
   }  
-  function validate(){  
-var num=document.myform.num.value;  
-if (isNaN(num)){  
+
+else if (isNaN(num)){  
   document.getElementById("numloc").innerHTML="Enter Numeric value only";  
   return false;  
-}else{  
-  return true;  
-  }  
+}
+else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false; 
 }  
-
 }  
 </script>  
 </head>
@@ -135,7 +137,6 @@ if (isNaN(num)){
            Password: <input type="password" name="password"><br/> 
            Email:<input type="email" name="email"><br/>
            Number: <input type="text" name="num"><span id="numloc"></span><br/>  
-            
           <textarea class="textarea" placeholder="Message" >Message</textarea>
            <input type="submit" value="submit"> 
         </form>
