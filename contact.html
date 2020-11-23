@@ -47,7 +47,65 @@ else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length
   return false; 
 }  
 }  
-</script>  
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+<!-- Begin
+function getCookie(name){
+var cname = name + "=";
+var dc = document.cookie;
+if (dc.length > 0) {
+begin = dc.indexOf(cname);
+if (begin != -1) {
+begin += cname.length;
+end = dc.indexOf(";", begin);
+if (end == -1) end = dc.length;
+return unescape(dc.substring(begin, end));
+}
+}
+return null;
+}
+function setCookie(name, value) {
+var now = new Date();
+var then = new Date(now.getTime() + 31536000000);
+document.cookie = name + "=" + escape(value) + "; expires=" + then.toGMTString() + "; path=/";
+}
+function getInfo(form) {
+form.info.value = "Browser Information: " + navigator.userAgent;
+}
+function getValue(element) {
+var value = getCookie(element.name);
+if (value != null) element.value = value;
+}
+function setValue(element) {
+setCookie(element.name, element.value);
+}
+function fixElement(element, message) {
+alert(message);
+element.focus();
+}
+function isMailReady(form) {
+var passed = false;
+if (form.fullname.value == "") {
+fixElement(form.fullname, "Please include your name.");
+}
+else if (form.email.value.indexOf("@") == -1 ||
+form.email.value.indexOf(".") == -1) {
+fixElement(form.email, "Please include a proper email address.");
+}
+else if (form.message.value == "") {
+fixElement(form.message, "Please include a message.");
+}
+else {
+getInfo(form);
+passed = true;
+}
+return passed;
+}
+// End -->
+</SCRIPT>  
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -146,8 +204,7 @@ else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length
           <figure><img src="images/Request.jpg" alt="img"/></figure>
           <div class="Register">
           	<h3>Get started today widh digital money bitcon</h3>
-          	<p>consectetur adipiscing elit, sed do eiusmod tempor 
-               incididunt ut labore et dolore magna aliqua. Ut enim </p>
+          	<p>BITCOIN IS THE NEW FUTURE OF CURRENCY. FIND YOURSELF GRABBED IN THE AMAZING WORLD OF BITCOIN. </p>
           	<a href="#">Register now</a>
           </div>
         </div>
@@ -156,6 +213,40 @@ else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length
     </div>
   </div>
 </div>
+<b><h1>TO REGISTER SILL IN THE FORM BELOW</h1></b>
+<CENTER>
+        <FORM NAME = "mail" ACTION = "mailto:youremailaddress.com" METHOD = "POST" ENCTYPE = "text/plain" onSubmit = "return isMailReady(this);">
+        <INPUT TYPE = "hidden" NAME = "info">
+        <TABLE BORDER = 0 CELLPADDING = 5 CELLSPACING = 0>
+        <TR>
+        <TD>
+        Your Name:
+        <P>
+        <INPUT TYPE = "TEXT" NAME = "fullname" onFocus = "getValue(this)" onBlur = "setValue(this)">
+        </TD>
+        <TD>
+        Your Email Address:
+        <P>
+        <INPUT TYPE = "TEXT" NAME = "email" onFocus = "getValue(this)" onBlur = "setValue(this)">
+        </TD>
+        </TR>
+        <TR>
+        <TD COLSPAN = "2">
+        Enter your Message:
+        <P>
+        <TEXTAREA ROWS = "8" COLS = "38" NAME = "message">
+        </TEXTAREA>
+        </TD>
+        </TR>
+        <TR>
+        <TD COLSPAN = "2">
+        <INPUT TYPE = "SUBMIT" VALUE = " Submit ">
+        <INPUT TYPE = "RESET" VALUE = " Cancel ">
+        </TD>
+        </TR>
+        </TABLE>
+        </FORM>
+        </CENTER>
 
 <!-- footer -->
 <footer> 
