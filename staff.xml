@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<staff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Employee EMPID="a30">
+	<id>emp11</id>
+		<email>marcv@gmail.com</email>
+		<experience>12 years</experience>
+		<phone>9782155694</phone>
+	</Employee>
+	<Employee EMPID="a301">
+	<id>emp22</id>
+	<email>lina@gmail.com </email>
+		<experience>15 years</experience>
+	
+		<phone>9492222354</phone>
+	</Employee>
+	<Employee EMPID="a301">
+	<id>emp33</id>
+	<email>ac@gmail.com</email>
+		<experience>22 years</experience>
+		
+		<phone>7987122354</phone>
+	</Employee>
+	</staff>
