@@ -113,30 +113,50 @@
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
           <div class="experts-threebox">
             <figure><img src="images/experts-1.jpg" alt="img"/></figure>
-            <h3>marco verratti </h3>
+            <h3 >marco verratti   </h3>
+            
             <span>Ceo Founder</span>
             <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            <button type="button" onclick ="mv();" >Get more info</button>
             <div class="icon"> <i> <a href="#"><img src="images/facebook.png"></a></i> <i> <a href="#"><img src="images/Twitter.png"></a></i> <i> <a href="#"><img src="images/linkedin.png"></a></i> <i> <a href="#"><img src="images/instagram.png"></a></i> </div>
+          </div>
+          <div id="emp1" class="container"> 
+            <table id="demo" style="width:100%;">
+                             
+            </table> 
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
           <div class="experts-threebox">
             <figure><img src="images/experts-2.jpg" alt="img"/></figure>
-            <h3>lina marzouki</h3>
+            <h3 >lina marzouki</h3>
             <span>Director</span>
             <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            <button type="button" onclick ="mv1();" >Get more info</button>
             <div class="icon"> <i> <a href="#"><img src="images/facebook.png"></a></i> <i> <a href="#"><img src="images/Twitter.png"></a></i> <i> <a href="#"><img src="images/linkedin.png"></a></i> <i> <a href="#"><img src="images/instagram.png"></a></i> </div>
           </div>
+          <div id="emp2" class="container">
+            <table id="demo1" style="width:100%;">
+                             
+            </table> 
+          </div> 
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
           <div class="experts-threebox">
             <figure><img src="images/experts-3.jpg" alt="img"/></figure>
             <h3>antonio conte </h3>
             <span>Money Developer</span>
-            <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor</p>
+            <button type="button" onclick ="mv2();" >Get more info</button>
             <div class="icon"> <i> <a href="#"><img src="images/facebook.png"></a></i> <i> <a href="#"><img src="images/Twitter.png"></a></i> <i> <a href="#"><img src="images/linkedin.png"></a></i> <i> <a href="#"><img src="images/instagram.png"></a></i> </div>
           </div>
+          <div id="emp3" class="container">
+            <table id="demo22" style="width:100%;">
+                               
+            </table> 
+          </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -194,5 +214,62 @@
 <!-- sidebar --> 
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script> 
 <script src="js/custom.js"></script>
+<!-- xml dom -->
+<script> 
+function mv()
+{
+  let idd="emp11";
+  loadXML(idd);
+}
+function mv1()
+{
+  let idd="emp22";
+  loadXML(idd);
+}
+function mv2()
+{
+  let idd="emp33";
+  loadXML(idd);
+}
+  function loadXML(idd)
+        {
+            var xhttp=new XMLHttpRequest();
+            xhttp.onreadystatechange=function()
+            {
+                if(this.readyState==4&&this.status==200)
+                {
+                    myFunction(this,idd);
+                }
+            };
+            xhttp.open("GET","staff.xml",true);
+            xhttp.send();
+        }
+        function myFunction(xml,idd)
+        {   
+            var i;
+            var xmlDoc=xml.responseXML;
+            var t="<tr><th>Email</th><th>Mobile</th></tr>";
+            var x=xmlDoc.getElementsByTagName("Employee");
+            for(i=0;i<x.length;i++)
+            { console.log(idd);
+              console.log(x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue); 
+              if(x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue==idd)
+                {t +="<tr><td>" +
+                x[i].getElementsByTagName("email")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }}
+            if(idd=="emp11")
+            document.getElementById("demo").innerHTML=t;
+            else if(idd=="emp22")
+            document.getElementById("demo1").innerHTML=t;
+            else if(idd=="emp33")
+            {
+            document.getElementById("demo22").innerHTML=t;
+        }}
+</script>
+
+
 </body>
 </html>
