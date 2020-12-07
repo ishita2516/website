@@ -14,7 +14,17 @@
 <div ng-app="DemoApp" ng-controller="DemoController">
     Tutorial Name : <input type="text" ng-model="tutorialName"><br>
     <br>
-    This tutorial is {{tutorialName | lowercase}}
+    This tutorial is {{tutorialName | lowercase}
+</div>
+<div ng-app="DemoApp" ng-controller="DemoController">
+    Tutorial Name : <input type="text" ng-model="tutorialName"><br>
+    <br>
+    This tutorial is {{tutorialName | uppercase}}
+
+</div>
+<div ng-app="DemoApp" ng-controller="DemoController">
+
+    This tutorialID is {{tutorialID | number:2}}
 
 </div>
 <script type="text/javascript">
@@ -24,6 +34,6 @@
         $scope.tutorialName ="Angular JS";
     });
 </script>
-
+<a href="ang.html">Filter using Angular js</a>
 </body>
 </html>
