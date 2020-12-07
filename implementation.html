@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta chrset="UTF 8">
-    <title>Event Registration</title>
 </head>
 <body>
 
@@ -10,21 +9,21 @@
 <script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <h1> Guru99 Global Event</h1>
+    <h1> Functioning of angular Js  filters : uppercase, lowercase and by number</h1>
 <div ng-app="DemoApp" ng-controller="DemoController">
     Tutorial Name : <input type="text" ng-model="tutorialName"><br>
     <br>
-    This tutorial is {{tutorialName | lowercase}
+    Enter the data {{tutorialName | lowercase}
 </div>
 <div ng-app="DemoApp" ng-controller="DemoController">
     Tutorial Name : <input type="text" ng-model="tutorialName"><br>
     <br>
-    This tutorial is {{tutorialName | uppercase}}
+    Enter the data {{tutorialName | uppercase}}
 
 </div>
 <div ng-app="DemoApp" ng-controller="DemoController">
 
-    This tutorialID is {{tutorialID | number:2}}
+    Enter the data{{tutorialID | number:2}}
 
 </div>
 <script type="text/javascript">
