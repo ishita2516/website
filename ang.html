@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <script src="~/Scripts/angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        Enter Name to search: <input type="text" ng-model="searchCriteria" /> <br />
+        Result: {{myArr | filter:searchCriteria}} 
+    </div>
+    <div ng-controller="myController">
+        <select ng-model="SortOrder">
+            <option value="+name">Name (asc)</option>
+            <option value="-name">Name (dec)</option>
+            <option value="+phone">Phone (asc)</option>
+            <option value="-phone">Phone (dec)</option>
+        </select>
+        <ul ng-repeat="person in persons | orderBy:SortOrder">
+            <li>{{person.name}} - {{person.phone}}</li>
+        </ul>
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+        
+        myApp.controller("myController", function ($scope) {
+        
+            $scope.persons = [{ name: 'John', phone: '512-455-1276' },
+                         { name: 'Mary', phone: '89920315' },
+                         { name: 'Mike', phone: '511454321' },
+                         { name: 'Bill', phone: '145885678' },
+                         { name: 'Ram', phone: '433448765' },
+                         { name: 'Steve', phone: '2184578' }]
+            
+            $scope.SortOrder = '+name';
+        });
+    <script>
+        var myApp = angular.module('myApp', []);
+        
+        myApp.controller("myController", function ($scope) {
+            $scope.myArr = ['Steve', 'Bill', 'James', 'Rob', 'Ramaya', 'Moina']
+        });   
+    </script>
+</body>
+</html>
