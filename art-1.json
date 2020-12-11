@@ -1,0 +1,27 @@
+
+[
+    {
+      "name": "America",
+      "artist" : "loui francis",
+      "detail": {
+        "rate": [" 65000"]
+        
+      }
+    },
+    {
+      "name": "australia",
+      "artist" : "EDVARD MUNCH",
+      "detail": {
+        "rate": [" 70000"]
+        
+      }
+    },
+    {
+      "name": "singapore",
+      "artist" : "MICHel robert",
+  "detail": {
+        "rate": [" 85000"]
+        
+      }
+    }
+  ]
