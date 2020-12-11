@@ -1,0 +1,25 @@
+ {
+      "name": "recent bitcoin",
+      "artist" : "Edward loiu",
+     "detail": {
+        "rate": ["25000"]
+        
+      }
+    },
+    {
+      "name": "previous month",
+      "artist" : "JAN VERMEER",
+     "detail": {
+        "rate": ["35000"]
+        
+      }
+    },
+    {
+      "name": "estimated next month",
+      "artist" : "del monte",
+      "detail": {
+        "rate": ["75000"]
+        
+      }
+    }
+  ]
