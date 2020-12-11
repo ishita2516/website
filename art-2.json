@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial scale=1" />
+<title>
+    Artwork updates
+</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>
+            World famous bitcoin.......</h1>
+            <button id="btn">
+                There you go!!
+            </button>
+    </header>
+<div id="art-info"></div>
+    <script src="main.js">
+    </script>
+</body>
+
