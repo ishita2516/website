@@ -1,0 +1,30 @@
+
+body{
+    
+    background-image: url("named.jpg");
+    background-size: cover;
+}
+h1{
+    align-self: auto;
+}
+table {
+    border-collapse: collapse;
+    color: hsl(180,100%,24%);
+    margin-left: auto;
+  margin-right: auto;
+    
+}
+
+td,th {
+    border: 1px solid hsl(180, 100%, 15%);
+    padding: 10px;
+}
+
+form {
+    width:180px;
+    padding-left:280px;
+}
+
+input {
+    display: block;
+}
