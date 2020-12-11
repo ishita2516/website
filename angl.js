@@ -10,7 +10,7 @@ function simpleController() {
         {name: "mauritius",artist:"Justin Blake", price: 55820}];
 
     this.limit = 9;
-    this.sortProperty = 'name';
+    this.sortProperty ='name';
     this.reverseSort = false;
 }
 
